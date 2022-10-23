@@ -4,7 +4,7 @@ trigger:
 pool:
   name: "default"
 
-- powershell:  # inline script
+- pwsh:  # inline script
   workingDirectory:  #
   displayName:  #
   failOnStderr:  #
