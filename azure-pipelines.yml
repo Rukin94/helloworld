@@ -148,7 +148,8 @@ steps:
             if ($null -ne $StatusCode) {
                 Write-Output ('Operation failed with http status code: ' + $StatusCode)
             }
-            exit 1
+            exit 0
+            $Error.HResult -eq -2146233087
         }
         
 
