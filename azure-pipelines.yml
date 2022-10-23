@@ -4,7 +4,7 @@ trigger:
 pool:
   name: "default"
 
-- task: PowerShell@2
+task: PowerShell@2
   inputs:
     targetType: 'inline'
     script: 'Invoke-RestMethod -uri ''https://www.netsparkercloud.com/api/1.0/scans/CreateFromPluginScanRequest'' -ContentType ''application/json; charset=UTF-8'' -Method POST -Headers @{ Authorization = "Basic $([System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($env:USERID +'':''+$env:APITOKEN)))"} -Body $(@{ WebsiteId=''6da650ec-65b7-498b-6ad0-ac9303d0685b''; ProfileId=''780ec8b6-f293-4a41-f795-af3704d9df25''; ScanType=''Incremental''; VcsCommitInfoModel = @{CiBuildConfigurationName = $env:SYSTEM_TEAMPROJECT; CiBuildHasChange = $env:BUILD_SOURCEVERSION; CiBuildId = $env:BUILD_BUILDID; CiBuildUrl= $env:SYSTEM_TEAMFOUNDATIONCOLLECTIONURI; Committer= $env:BUILD_REQUESTEDFOR; IntegrationSystem = ''AzureDevOps''; VcsName = $env:BUILD_REPOSITORY_PROVIDER; VcsVersion = $env:BUILD_SOURCEVERSION};}| ConvertTo-Json)'
