@@ -9,16 +9,10 @@ trigger:
 pool:
   name: default
 
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
-steps:
 - powershell: |
 
         #Powershell script starting
@@ -156,3 +150,9 @@ steps:
             }
             exit 1
         }
+        
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
