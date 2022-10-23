@@ -11,8 +11,6 @@ pool:
 
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 - powershell: |
 
         #Powershell script starting
@@ -149,11 +147,6 @@ steps:
                 Write-Output ('Operation failed with http status code: ' + $StatusCode)
             }
             exit 0
-            $Error.HResult -eq -2146233087
+            
         }
         
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
