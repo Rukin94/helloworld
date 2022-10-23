@@ -146,7 +146,7 @@ steps:
             if ($null -ne $StatusCode) {
                 Write-Output ('Operation failed with http status code: ' + $StatusCode)
             }
-            exit 0
+            exit 1
             
         }
         
